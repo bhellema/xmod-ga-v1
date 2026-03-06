@@ -8,12 +8,25 @@
 }
 
 .cards-story > ul > li {
-  border: 1px solid #dadada;
+  border: 1px solid #dcdfe3;
+  border-radius: 16px;
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .cards-story .cards-story-card-body {
-  margin: 16px;
+  padding: 24px;
+}
+
+.cards-story .cards-story-card-body h3 {
+  margin-top: 0;
+}
+
+.cards-story .cards-story-card-body p {
+  font-size: 14px;
+  line-height: 1.43;
+  color: #454b52;
+  margin: 8px 0;
 }
 
 .cards-story .cards-story-card-image {

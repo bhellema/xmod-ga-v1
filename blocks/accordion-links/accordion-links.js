@@ -20,6 +20,9 @@ export default function decorate(block) {
     const details = document.createElement('details');
     moveInstrumentation(row, details);
     details.className = 'accordion-links-item';
+    if (window.matchMedia('(min-width: 900px)').matches) {
+      details.open = true;
+    }
     details.append(summary, body);
     row.replaceWith(details);
   });

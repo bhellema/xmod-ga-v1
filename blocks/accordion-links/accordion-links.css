@@ -63,3 +63,60 @@
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
+
+/* Desktop: 4-column link grid layout */
+@media (width >= 900px) {
+  .accordion-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
+  }
+
+  .accordion-links details {
+    border: none;
+  }
+
+  .accordion-links details + details {
+    margin-top: 0;
+  }
+
+  .accordion-links details summary {
+    padding: 0;
+    padding-right: 0;
+    cursor: default;
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .accordion-links details summary::after {
+    display: none;
+  }
+
+  .accordion-links details[open] summary {
+    background-color: transparent;
+  }
+
+  .accordion-links details .accordion-links-item-body {
+    padding: 0;
+  }
+
+  .accordion-links details[open] .accordion-links-item-body {
+    border-top: none;
+  }
+
+  .accordion-links details .accordion-links-item-body ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+  }
+
+  .accordion-links details .accordion-links-item-body li {
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  .accordion-links details .accordion-links-item-body a {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

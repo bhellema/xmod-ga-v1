@@ -19,11 +19,21 @@
   display: block;
 }
 
+.columns-feature h2 {
+  letter-spacing: -0.03em;
+}
+
+.columns-feature p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #454b52;
+}
+
 @media (width >= 900px) {
   .columns-feature > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
+    gap: 32px;
   }
 
   .columns-feature > div > div {
