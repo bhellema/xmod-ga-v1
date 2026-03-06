@@ -1,0 +1,216 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.business.att.com/"
+      ],
+      "description": "AT&T Business homepage with hero, product offerings, promotions, and business solutions",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            "div.hero.aem-GridColumn:nth-child(1)",
+            "div.hero.aem-GridColumn:nth-child(6)",
+            "div.hero.aem-GridColumn:nth-child(10)"
+          ]
+        },
+        {
+          "name": "cards-icon",
+          "instances": [
+            "div.multi-tile-cards.aem-GridColumn:nth-child(2)",
+            "div.generic-list-value-prop.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            "div.flex-cards.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "div.offer.aem-GridColumn:nth-child(5)",
+            "div.offer.aem-GridColumn:nth-child(8)"
+          ]
+        },
+        {
+          "name": "carousel-industry",
+          "instances": [
+            "div.story-stack.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "cards-story",
+          "instances": [
+            "div.multi-tile-cards.aem-GridColumn:nth-child(11)"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "div.rai-form.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "accordion-links",
+          "instances": [
+            "div.link-farm.aem-GridColumn"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": "div.hero.aem-GridColumn:nth-child(1)",
+          "style": null,
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Product Cards",
+          "selector": "div.multi-tile-cards.aem-GridColumn:nth-child(2)",
+          "style": null,
+          "blocks": [
+            "cards-icon"
+          ],
+          "defaultContent": [
+            ".multi-tile-main .eyebrow-heading-body h2",
+            ".multi-tile-main .eyebrow-heading-body .type-base"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Promotional Flex Cards",
+          "selector": "div.flex-cards.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": [
+            ".flex-cards h1"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Value Propositions",
+          "selector": "div.generic-list-value-prop.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-icon"
+          ],
+          "defaultContent": [
+            ".generic-list-value-prop h2",
+            ".generic-list-value-prop .type-base"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Customer Satisfaction Award",
+          "selector": "div.offer.aem-GridColumn:nth-child(5)",
+          "style": "grey",
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Dynamic Defense Hero",
+          "selector": "div.hero.aem-GridColumn:nth-child(6)",
+          "style": "dark",
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Risk-Free Trial Banner",
+          "selector": "div.micro-banner.aem-GridColumn",
+          "style": "accent",
+          "blocks": [],
+          "defaultContent": [
+            ".micro-banner h3",
+            ".micro-banner .type-base"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Switch to AT&T",
+          "selector": "div.offer.aem-GridColumn:nth-child(8)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Industry Solutions Carousel",
+          "selector": "div.story-stack.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "carousel-industry"
+          ],
+          "defaultContent": [
+            ".story-stack .ss-masterHeader h2"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "AT&T Guarantee Hero",
+          "selector": "div.hero.aem-GridColumn:nth-child(10)",
+          "style": "dark",
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11",
+          "name": "Customer Stories",
+          "selector": "div.multi-tile-cards.aem-GridColumn:nth-child(11)",
+          "style": null,
+          "blocks": [
+            "cards-story"
+          ],
+          "defaultContent": [
+            ".multi-tile-main .eyebrow-heading-body h2",
+            ".multi-tile-main .eyebrow-heading-body .type-base"
+          ]
+        },
+        {
+          "id": "section-12",
+          "name": "Contact Sales Form",
+          "selector": "div.rai-form.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": [
+            ".rai-form h2",
+            ".rai-form .type-base"
+          ]
+        },
+        {
+          "id": "section-13",
+          "name": "Footer Links Accordion",
+          "selector": "div.link-farm.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "accordion-links"
+          ],
+          "defaultContent": [
+            ".link-farm h2"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "xwalk",
+  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+  "contentHostUrl": "author-p141866-e1619657.adobeaemcloud.com",
+  "aemSitePath": "/content/xmod-ga-v1",
+  "aemAssetsFolderPath": "/content/dam/xmod-ga-v1",
+  "aemSiteName": "xmod-ga-v1",
+  "aemSiteTitle": "xmod-ga-v1"
+}

@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-06T01:43:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-highlight",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + body + CTA | image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "text + image side-by-side sections",
+      "feature highlight with award or badge image",
+      "offer sections with checklist and image"
+    ],
+    "notSuitableFor": [
+      "multi-column data layouts",
+      "three or more column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-06T01:43:00.000Z"
+  }
+}

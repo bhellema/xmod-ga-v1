@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-story",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-06T01:43:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "customer-stories",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + eyebrow + quote heading + description + legal + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer story cards",
+      "testimonial cards with images",
+      "case study cards"
+    ],
+    "notSuitableFor": [
+      "simple icon cards",
+      "promotional offer cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-06T01:43:00.000Z"
+  }
+}

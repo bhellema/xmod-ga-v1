@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-links",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-03-06T01:43:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "link-collection",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "category heading + link list",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "footer link collections",
+      "expandable navigation menus",
+      "categorized link lists"
+    ],
+    "notSuitableFor": [
+      "FAQ sections with long answers",
+      "content-heavy accordion panels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-06T01:43:00.000Z"
+  }
+}

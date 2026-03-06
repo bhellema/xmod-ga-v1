@@ -1,0 +1,50 @@
+.cards-icon > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
+}
+
+.cards-icon > ul > li {
+  border: 1px solid #dcdfe3;
+  border-radius: 16px;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.cards-icon .cards-icon-card-body {
+  padding: 24px;
+}
+
+.cards-icon .cards-icon-card-body h3,
+.cards-icon .cards-icon-card-body h4 {
+  margin-top: 0;
+}
+
+.cards-icon .cards-icon-card-body p {
+  font-size: 14px;
+  line-height: 1.43;
+  color: #454b52;
+  margin: 8px 0;
+}
+
+.cards-icon .cards-icon-card-image {
+  line-height: 0;
+}
+
+.cards-icon > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* "Why work with AT&T" variant - uses h4 headings, centered text */
+.cards-icon .cards-icon-card-body:has(h4) {
+  text-align: center;
+}
+
+.cards-icon .cards-icon-card-body:has(h4) .button-container {
+  justify-content: center;
+}
