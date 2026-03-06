@@ -28,9 +28,33 @@
     ]
   },
   {
+    "id": "accordion-links",
+    "components": [
+      "accordion-links-item"
+    ]
+  },
+  {
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-icon",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-promo",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-story",
+    "components": [
+      "card"
     ]
   },
   {
@@ -40,9 +64,30 @@
     ]
   },
   {
+    "id": "carousel-industry",
+    "components": [
+      "carousel-industry-item"
+    ]
+  },
+  {
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-feature",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
