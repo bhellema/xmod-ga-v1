@@ -1,37 +1,166 @@
+/* hero-banner: full-bleed hero with background image and text overlay */
+
+/* Full-bleed wrapper */
 .hero-banner-container .hero-banner-wrapper {
   max-width: unset;
   padding: 0;
 }
 
+/* Hero container — mobile-first: stacked layout */
 .hero-banner {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  overflow: hidden;
+  padding: 0;
 }
 
-.hero-banner h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
+/* --- Simple element selectors (0,1,1) --- */
 
-.hero-banner picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero-banner h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #1d2329;
+  margin: 0 0 16px;
+}
+
+.hero-banner a {
+  color: #0568ae;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* --- Pseudo-class element selectors (0,2,1) --- */
+
+.hero-banner a:hover {
+  text-decoration: underline;
+}
+
+/* --- Structural child selectors (0,2,1) --- */
+
+/* Image row — in normal flow on mobile (stacked above text) */
+.hero-banner > div:first-child {
+  height: 60vw;
+  max-height: 280px;
+}
+
+/* Text row — below image on mobile */
+.hero-banner > div:last-child {
+  padding: 32px 24px;
   box-sizing: border-box;
 }
 
-.hero-banner img {
-  object-fit: cover;
-  width: 100%;
+/* --- Descendant structural selectors (0,2,2) --- */
+
+.hero-banner > div:first-child > div {
   height: 100%;
 }
 
-@media (width >= 900px) {
+.hero-banner > div:first-child p {
+  margin: 0;
+  height: 100%;
+}
+
+.hero-banner > div:last-child > div {
+  max-width: 100%;
+}
+
+/* --- Deep selectors (0,3,3) --- */
+
+/* Eyebrow — first paragraph */
+.hero-banner > div:last-child > div > p:first-child {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #1d2329;
+  margin: 0 0 8px;
+}
+
+/* Body text — paragraphs after h2 */
+.hero-banner > div:last-child > div > p:not(:first-child) {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #454b52;
+  margin: 0 0 8px;
+}
+
+/* --- Tablet (>= 768px): side-by-side with image as background --- */
+@media (width >= 768px) {
   .hero-banner {
+    min-height: 500px;
+  }
+
+  .hero-banner img {
+    object-position: 30% 50%;
+  }
+
+  .hero-banner h2 {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  /* Image row — absolute positioned background */
+  .hero-banner > div:first-child {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: auto;
+    max-height: none;
+  }
+
+  /* Text row — overlaid on left side */
+  .hero-banner > div:last-child {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
     padding: 40px 32px;
+  }
+
+  /* Constrain text to left portion */
+  .hero-banner > div:last-child > div {
+    max-width: 42%;
+  }
+
+  .hero-banner > div:last-child > div > p:first-child {
+    font-size: 18px;
+  }
+}
+
+/* --- Desktop (>= 1200px) --- */
+@media (width >= 1200px) {
+  .hero-banner img {
+    object-position: 40% 50%;
+  }
+
+  .hero-banner h2 {
+    font-size: 48px;
+    letter-spacing: -1.44px;
+  }
+
+  .hero-banner > div:last-child > div {
+    max-width: min(595px, 42%);
+    margin-left: max(0px, calc((100vw - 1200px) / 2));
+  }
+
+  .hero-banner > div:last-child > div > p:first-child {
+    font-size: 20px;
+  }
+}
+
+/* --- Large desktop (>= 1600px) --- */
+@media (width >= 1600px) {
+  .hero-banner img {
+    object-position: 50% 50%;
   }
 }

@@ -12,8 +12,24 @@
  * Collapsed fields (skip hints): imageAlt
  */
 export default function parse(element, { document }) {
-  // Extract background image from bg-hero-panel
-  const bgImage = element.querySelector('.bg-hero-panel img, .bg-art img');
+  // Extract background image - try <img> tag first, then CSS background-image
+  let bgImage = element.querySelector('.bg-hero-panel img, .bg-art img');
+
+  // If no <img> tag, check for CSS background-image on .bg-hero-panel
+  if (!bgImage) {
+    const bgPanel = element.querySelector('.bg-hero-panel, .bg-art [class*="bg-hero-panel"]');
+    if (bgPanel) {
+      const computedStyle = bgPanel.ownerDocument.defaultView.getComputedStyle(bgPanel);
+      const bgUrl = computedStyle.backgroundImage;
+      if (bgUrl && bgUrl !== 'none') {
+        const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+        if (urlMatch && urlMatch[1]) {
+          bgImage = document.createElement('img');
+          bgImage.src = urlMatch[1];
+        }
+      }
+    }
+  }
 
   // Extract text content from content-panel-text
   const textPanel = element.querySelector('.content-panel-text .max-width-595, .content-panel-text');

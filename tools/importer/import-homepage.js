@@ -38,15 +38,15 @@ const PAGE_TEMPLATE = {
     {
       name: 'hero-banner',
       instances: [
-        'div.hero.aem-GridColumn:first-of-type',
-        'div.hero.aem-GridColumn:nth-of-type(2)',
-        'div.hero.aem-GridColumn:nth-of-type(3)'
+        'div.hero.aem-GridColumn:nth-child(1)',
+        'div.hero.aem-GridColumn:nth-child(6)',
+        'div.hero.aem-GridColumn:nth-child(10)'
       ]
     },
     {
       name: 'cards-icon',
       instances: [
-        'div.multi-tile-cards.aem-GridColumn:first-of-type',
+        'div.multi-tile-cards.aem-GridColumn:nth-child(2)',
         'div.generic-list-value-prop.aem-GridColumn'
       ]
     },
@@ -59,8 +59,8 @@ const PAGE_TEMPLATE = {
     {
       name: 'columns-feature',
       instances: [
-        'div.offer.aem-GridColumn:first-of-type',
-        'div.offer.aem-GridColumn:nth-of-type(2)'
+        'div.offer.aem-GridColumn:nth-child(5)',
+        'div.offer.aem-GridColumn:nth-child(8)'
       ]
     },
     {
@@ -72,7 +72,7 @@ const PAGE_TEMPLATE = {
     {
       name: 'cards-story',
       instances: [
-        'div.multi-tile-cards.aem-GridColumn:nth-of-type(2)'
+        'div.multi-tile-cards.aem-GridColumn:nth-child(11)'
       ]
     },
     {
@@ -92,7 +92,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-1',
       name: 'Hero Banner',
-      selector: 'div.hero.aem-GridColumn:first-of-type',
+      selector: 'div.hero.aem-GridColumn:nth-child(1)',
       style: null,
       blocks: ['hero-banner'],
       defaultContent: []
@@ -100,7 +100,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-2',
       name: 'Product Cards',
-      selector: 'div.multi-tile-cards.aem-GridColumn:first-of-type',
+      selector: 'div.multi-tile-cards.aem-GridColumn:nth-child(2)',
       style: null,
       blocks: ['cards-icon'],
       defaultContent: ['.multi-tile-main .eyebrow-heading-body h2', '.multi-tile-main .eyebrow-heading-body .type-base']
@@ -124,7 +124,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-5',
       name: 'Customer Satisfaction Award',
-      selector: 'div.offer.aem-GridColumn:first-of-type',
+      selector: 'div.offer.aem-GridColumn:nth-child(5)',
       style: 'grey',
       blocks: ['columns-feature'],
       defaultContent: []
@@ -132,7 +132,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-6',
       name: 'Dynamic Defense Hero',
-      selector: 'div.hero.aem-GridColumn:nth-of-type(2)',
+      selector: 'div.hero.aem-GridColumn:nth-child(6)',
       style: 'dark',
       blocks: ['hero-banner'],
       defaultContent: []
@@ -148,7 +148,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-8',
       name: 'Switch to AT&T',
-      selector: 'div.offer.aem-GridColumn:nth-of-type(2)',
+      selector: 'div.offer.aem-GridColumn:nth-child(8)',
       style: null,
       blocks: ['columns-feature'],
       defaultContent: []
@@ -164,7 +164,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-10',
       name: 'AT&T Guarantee Hero',
-      selector: 'div.hero.aem-GridColumn:nth-of-type(3)',
+      selector: 'div.hero.aem-GridColumn:nth-child(10)',
       style: 'dark',
       blocks: ['hero-banner'],
       defaultContent: []
@@ -172,7 +172,7 @@ const PAGE_TEMPLATE = {
     {
       id: 'section-11',
       name: 'Customer Stories',
-      selector: 'div.multi-tile-cards.aem-GridColumn:nth-of-type(2)',
+      selector: 'div.multi-tile-cards.aem-GridColumn:nth-child(11)',
       style: null,
       blocks: ['cards-story'],
       defaultContent: ['.multi-tile-main .eyebrow-heading-body h2', '.multi-tile-main .eyebrow-heading-body .type-base']

@@ -42,7 +42,21 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/hero-banner.js
   function parse(element, { document }) {
-    const bgImage = element.querySelector(".bg-hero-panel img, .bg-art img");
+    let bgImage = element.querySelector(".bg-hero-panel img, .bg-art img");
+    if (!bgImage) {
+      const bgPanel = element.querySelector('.bg-hero-panel, .bg-art [class*="bg-hero-panel"]');
+      if (bgPanel) {
+        const computedStyle = bgPanel.ownerDocument.defaultView.getComputedStyle(bgPanel);
+        const bgUrl = computedStyle.backgroundImage;
+        if (bgUrl && bgUrl !== "none") {
+          const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+          if (urlMatch && urlMatch[1]) {
+            bgImage = document.createElement("img");
+            bgImage.src = urlMatch[1];
+          }
+        }
+      }
+    }
     const textPanel = element.querySelector(".content-panel-text .max-width-595, .content-panel-text");
     const textContent = document.createDocumentFragment();
     if (textPanel) {
@@ -556,15 +570,15 @@ var CustomImportScript = (() => {
       {
         name: "hero-banner",
         instances: [
-          "div.hero.aem-GridColumn:first-of-type",
-          "div.hero.aem-GridColumn:nth-of-type(2)",
-          "div.hero.aem-GridColumn:nth-of-type(3)"
+          "div.hero.aem-GridColumn:nth-child(1)",
+          "div.hero.aem-GridColumn:nth-child(6)",
+          "div.hero.aem-GridColumn:nth-child(10)"
         ]
       },
       {
         name: "cards-icon",
         instances: [
-          "div.multi-tile-cards.aem-GridColumn:first-of-type",
+          "div.multi-tile-cards.aem-GridColumn:nth-child(2)",
           "div.generic-list-value-prop.aem-GridColumn"
         ]
       },
@@ -577,8 +591,8 @@ var CustomImportScript = (() => {
       {
         name: "columns-feature",
         instances: [
-          "div.offer.aem-GridColumn:first-of-type",
-          "div.offer.aem-GridColumn:nth-of-type(2)"
+          "div.offer.aem-GridColumn:nth-child(5)",
+          "div.offer.aem-GridColumn:nth-child(8)"
         ]
       },
       {
@@ -590,7 +604,7 @@ var CustomImportScript = (() => {
       {
         name: "cards-story",
         instances: [
-          "div.multi-tile-cards.aem-GridColumn:nth-of-type(2)"
+          "div.multi-tile-cards.aem-GridColumn:nth-child(11)"
         ]
       },
       {
@@ -610,7 +624,7 @@ var CustomImportScript = (() => {
       {
         id: "section-1",
         name: "Hero Banner",
-        selector: "div.hero.aem-GridColumn:first-of-type",
+        selector: "div.hero.aem-GridColumn:nth-child(1)",
         style: null,
         blocks: ["hero-banner"],
         defaultContent: []
@@ -618,7 +632,7 @@ var CustomImportScript = (() => {
       {
         id: "section-2",
         name: "Product Cards",
-        selector: "div.multi-tile-cards.aem-GridColumn:first-of-type",
+        selector: "div.multi-tile-cards.aem-GridColumn:nth-child(2)",
         style: null,
         blocks: ["cards-icon"],
         defaultContent: [".multi-tile-main .eyebrow-heading-body h2", ".multi-tile-main .eyebrow-heading-body .type-base"]
@@ -642,7 +656,7 @@ var CustomImportScript = (() => {
       {
         id: "section-5",
         name: "Customer Satisfaction Award",
-        selector: "div.offer.aem-GridColumn:first-of-type",
+        selector: "div.offer.aem-GridColumn:nth-child(5)",
         style: "grey",
         blocks: ["columns-feature"],
         defaultContent: []
@@ -650,7 +664,7 @@ var CustomImportScript = (() => {
       {
         id: "section-6",
         name: "Dynamic Defense Hero",
-        selector: "div.hero.aem-GridColumn:nth-of-type(2)",
+        selector: "div.hero.aem-GridColumn:nth-child(6)",
         style: "dark",
         blocks: ["hero-banner"],
         defaultContent: []
@@ -666,7 +680,7 @@ var CustomImportScript = (() => {
       {
         id: "section-8",
         name: "Switch to AT&T",
-        selector: "div.offer.aem-GridColumn:nth-of-type(2)",
+        selector: "div.offer.aem-GridColumn:nth-child(8)",
         style: null,
         blocks: ["columns-feature"],
         defaultContent: []
@@ -682,7 +696,7 @@ var CustomImportScript = (() => {
       {
         id: "section-10",
         name: "AT&T Guarantee Hero",
-        selector: "div.hero.aem-GridColumn:nth-of-type(3)",
+        selector: "div.hero.aem-GridColumn:nth-child(10)",
         style: "dark",
         blocks: ["hero-banner"],
         defaultContent: []
@@ -690,7 +704,7 @@ var CustomImportScript = (() => {
       {
         id: "section-11",
         name: "Customer Stories",
-        selector: "div.multi-tile-cards.aem-GridColumn:nth-of-type(2)",
+        selector: "div.multi-tile-cards.aem-GridColumn:nth-child(11)",
         style: null,
         blocks: ["cards-story"],
         defaultContent: [".multi-tile-main .eyebrow-heading-body h2", ".multi-tile-main .eyebrow-heading-body .type-base"]
